@@ -26,7 +26,7 @@ from __future__ import absolute_import, print_function
 import panflute.defs
 import panflute.tests.runner
 
-import gconf
+import mateconf
 import os.path
 import sys
 
@@ -66,8 +66,8 @@ class Runner (panflute.tests.runner.Runner):
             print ("  </AddinStatus>", file = conf)
             print ("</Configuration>", file = conf)
 
-        print ("Banshee GConf", file = sys.stderr)
-        client = gconf.client_get_default ()
+        print ("Banshee MateConf", file = sys.stderr)
+        client = mateconf.client_get_default ()
         client.recursive_unset ("/apps/banshee-1", 0)
         client.set_string ("/apps/banshee-1/sources/_music_library_source_-_library/library-location",
                            panflute.defs.PKG_DATA_DIR)

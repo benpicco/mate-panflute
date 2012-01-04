@@ -1,4 +1,4 @@
-<gconfschemafile>
+<mateconfschemafile>
     <schemalist>
 
         <!-- Daemon schemas -->
@@ -393,6 +393,6 @@
         </schema>
 
     </schemalist>
-</gconfschemafile>
+</mateconfschemafile>
 
 <!-- vim: set ft=xml: -->

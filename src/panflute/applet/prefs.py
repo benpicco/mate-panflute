@@ -18,7 +18,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02111-1301, USA.
 
 """
-Preferences dialog for the Panflute GNOME panel applet.
+Preferences dialog for the Panflute MATE panel applet.
 """
 
 from __future__ import absolute_import
@@ -27,7 +27,7 @@ import panflute.defs
 
 import dbus
 import functools
-import gconf
+import mateconf
 import gtk
 import os.path
 
@@ -88,14 +88,14 @@ class Preferences (object):
             self.__connector_manager.connect_to_signal ("PreferredChanged", self.__preferred_changed_cb)
         ]
 
-        self.__gconf_handlers = [
-            conf.connect_bool ("show_remaining_time", self.__gconf_show_remaining_time_changed_cb, call_now = True),
-            conf.connect_bool ("show_notifications", self.__gconf_show_notifications_changed_cb, call_now = True)
+        self.__mateconf_handlers = [
+            conf.connect_bool ("show_remaining_time", self.__mateconf_show_remaining_time_changed_cb, call_now = True),
+            conf.connect_bool ("show_notifications", self.__mateconf_show_notifications_changed_cb, call_now = True)
         ]
 
         (first_row, second_row) = layout.props.layout
         for internal_name in first_row + second_row:
-            self.__gconf_handlers.append (conf.connect_bool ("show_{0}".format (internal_name),
+            self.__mateconf_handlers.append (conf.connect_bool ("show_{0}".format (internal_name),
                                                              functools.partial (self.__update_widget_visibility, internal_name)))
 
         self.__layout_handlers = [
@@ -120,9 +120,9 @@ class Preferences (object):
             handler.remove ()
         self.__dbus_handlers = []
 
-        for handler in self.__gconf_handlers:
+        for handler in self.__mateconf_handlers:
             self.__conf.disconnect (handler)
-        self.__gconf_handlers = []
+        self.__mateconf_handlers = []
 
         for handler in self.__layout_handlers:
             self.__layout.handler_disconnect (handler)
@@ -134,7 +134,7 @@ class Preferences (object):
 
     def time_elapsed_toggled_cb (self, toggle_button):
         """
-        Update GConf with the new show_remaining_time setting, if the radio
+        Update MateConf with the new show_remaining_time setting, if the radio
         button for Elapsed was set.
         """
 
@@ -144,7 +144,7 @@ class Preferences (object):
 
     def time_remaining_toggled_cb (self, toggle_button):
         """
-        Update GConf with the new show_remaining_time setting, if the radio
+        Update MateConf with the new show_remaining_time setting, if the radio
         button for Remaining was set.
         """
 
@@ -152,9 +152,9 @@ class Preferences (object):
             self.__conf.set_bool ("show_remaining_time", True)
 
 
-    def __gconf_show_remaining_time_changed_cb (self, value):
+    def __mateconf_show_remaining_time_changed_cb (self, value):
         """
-        Update the dialog with the new show_remaining_time setting in GConf.
+        Update the dialog with the new show_remaining_time setting in MateConf.
         """
 
         if value:
@@ -168,15 +168,15 @@ class Preferences (object):
 
     def show_notifications_toggled_cb (self, toggle_button):
         """
-        Update GConf with the new show_notifications setting.
+        Update MateConf with the new show_notifications setting.
         """
 
         self.__conf.set_bool ("show_notifications", toggle_button.get_active ())
 
 
-    def __gconf_show_notifications_changed_cb (self, value):
+    def __mateconf_show_notifications_changed_cb (self, value):
         """
-        Update the dialog with the new show_notifications setting in GConf.
+        Update the dialog with the new show_notifications setting in MateConf.
         """
 
         self.__builder.get_object ("show_notifications").set_active (value)
@@ -188,7 +188,7 @@ class Preferences (object):
     def layout_visible_renderer_toggled_cb (self, renderer, path):
         """
         Toggle the check box for a widget's visibility and propagate the
-        change to GConf.
+        change to MateConf.
         """
 
         model = self.__builder.get_object ("layout_store")
@@ -287,7 +287,7 @@ class Preferences (object):
 
     def layout_store_rows_reordered_cb (self, model, path, iter, new_order):
         """
-        Update GConf with the new requested widget order.
+        Update MateConf with the new requested widget order.
 
         This gets called when the reordering buttons are used; swapping
         rows is considered a reordering.
@@ -295,7 +295,7 @@ class Preferences (object):
 
         if not self.__ignore_model_updates:
             self.log.debug ("Rows reordered: {0}".format (path))
-            self.__push_order_to_gconf ()
+            self.__push_order_to_mateconf ()
 
 
     def layout_store_row_inserted_cb (self, model, path, iter):
@@ -309,7 +309,7 @@ class Preferences (object):
 
     def layout_store_row_deleted_cb (self, model, path):
         """
-        Update GConf with the new requested widget order.
+        Update MateConf with the new requested widget order.
 
         When the default drag-and-drop-to-reorder behavior happens, the view
         inserts a copy of the row(s) in the new position before deleting the
@@ -319,12 +319,12 @@ class Preferences (object):
 
         if not self.__ignore_model_updates:
             self.log.debug ("Row deleted: {0}".format (path))
-            self.__push_order_to_gconf ()
+            self.__push_order_to_mateconf ()
 
 
-    def __push_order_to_gconf (self):
+    def __push_order_to_mateconf (self):
         """
-        Update GConf with the new requested widget order.
+        Update MateConf with the new requested widget order.
         """
 
         self.__conf.set_string_list ("widget_order", self.__get_internal_order ())
@@ -337,7 +337,7 @@ class Preferences (object):
         """
 
         # Avoid replacing the model contents if there's no real change, which
-        # happens if this dialog was what made the change in GConf to begin
+        # happens if this dialog was what made the change in MateConf to begin
         # with.
 
         new_order = self.__get_manager_order ()
@@ -381,7 +381,7 @@ class Preferences (object):
 
     def __update_widget_visibility (self, internal_name, visible):
         """
-        Update the visibility check box for a widget when its status in GConf
+        Update the visibility check box for a widget when its status in MateConf
         changes.
         """
 
@@ -458,14 +458,14 @@ class Preferences (object):
 
     def preferred_player_changed_cb (self, preferred):
         """
-        Update the daemon's GConf setting with the newly selected preferred
+        Update the daemon's MateConf setting with the newly selected preferred
         player.
         """
 
         model = preferred.get_model ()
         iter = preferred.get_active_iter ()
 
-        client = gconf.client_get_default ()
+        client = mateconf.client_get_default ()
         client.set_string ("/apps/panflute/daemon/preferred_player", model[iter][self.CONN_COL_INTERNAL_NAME])
 
 
@@ -474,7 +474,7 @@ class Preferences (object):
 
     def __load_metadata (self):
         """
-        Load the GConf setting for the metadata into the text buffer.
+        Load the MateConf setting for the metadata into the text buffer.
         """
 
         buffer = self.__builder.get_object ("metadata_buffer")
@@ -484,7 +484,7 @@ class Preferences (object):
 
     def metadata_buffer_changed_cb (self, buffer):
         """
-        Update GConf with the new metadata format strings.
+        Update MateConf with the new metadata format strings.
         """
 
         begin, end = buffer.get_bounds ()
@@ -519,7 +519,7 @@ class Preferences (object):
         Restore the metadata buffer to its default value.
         """
 
-        client = gconf.client_get_default ()
+        client = mateconf.client_get_default ()
         schema = client.get_schema ("/schemas/apps/panflute/applet/prefs/metadata_lines")
         default = schema.get_default_value ()
         strings = [v.get_string () for v in default.get_list ()]

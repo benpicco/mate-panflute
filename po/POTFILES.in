@@ -1,5 +1,5 @@
-data/GNOME_Panflute_Applet.server.in.in
-data/GNOME_Panflute_Applet.xml
+data/MATE_Panflute_Applet.server.in.in
+data/MATE_Panflute_Applet.xml
 data/panflute.schemas.in
 [type: gettext/glade] data/preferences.ui
 src/panflute/applet/applet.py

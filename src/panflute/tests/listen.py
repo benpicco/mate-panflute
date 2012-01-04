@@ -67,9 +67,9 @@ class Runner (panflute.tests.runner.Runner):
         child = self.run_command ([path])
         self.set_child (child)
 
-        self.wait_for ("org.gnome.Listen", True)
-        proxy = self.bus.get_object ("org.gnome.Listen", "/org/gnome/listen")
-        self.__listen = dbus.Interface (proxy, "org.gnome.Listen")
+        self.wait_for ("org.mate.Listen", True)
+        proxy = self.bus.get_object ("org.mate.Listen", "/org/mate/listen")
+        self.__listen = dbus.Interface (proxy, "org.mate.Listen")
 
         self.__listen.enqueue (self.TONE_URIS)
         # Ugly hack, without which Listen will never start playing.
@@ -80,4 +80,4 @@ class Runner (panflute.tests.runner.Runner):
 
     def cleanup_single (self):
         self.__listen.quit ()
-        self.wait_for ("org.gnome.Listen", False)
+        self.wait_for ("org.mate.Listen", False)

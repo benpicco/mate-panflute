@@ -18,7 +18,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02111-1301, USA.
 
 """
-Implementation of the GNOME panel applet for Panflute.
+Implementation of the MATE panel applet for Panflute.
 
 The panel applet provides playback controls, song information, and related
 features to the user.  It relies on the Panflute daemon to actually
@@ -39,7 +39,7 @@ import panflute.mpris
 import dbus
 import functools
 from   gettext     import gettext as _
-import gnomeapplet
+import mateapplet
 import gobject
 import gtk
 import os.path
@@ -88,7 +88,7 @@ class Applet (object):
         self.__notification = None
         self.__conf.connect_bool ("show_notifications", self.__show_notifications_changed_cb, call_now = True)
 
-        applet.set_applet_flags (gnomeapplet.EXPAND_MINOR)
+        applet.set_applet_flags (mateapplet.EXPAND_MINOR)
         applet.connect ("change-orient", self.__change_orient_cb)
         applet.connect ("change-size", self.__change_size_cb)
         applet.connect ("destroy", self.__destroy_cb)
@@ -241,7 +241,7 @@ class Applet (object):
 
             if first_box is not None and second_box is not None:
                 self.log.debug ("Using a two-row layout")
-                if orient == gnomeapplet.ORIENT_UP or orient == gnomeapplet.ORIENT_DOWN:
+                if orient == mateapplet.ORIENT_UP or orient == mateapplet.ORIENT_DOWN:
                     big_box = gtk.VBox ()
                 else:
                     big_box = gtk.HBox ()
@@ -269,16 +269,16 @@ class Applet (object):
 
         if len (widgets) > 0:
             orient = self.__applet.get_orient ()
-            if orient == gnomeapplet.ORIENT_UP or orient == gnomeapplet.ORIENT_DOWN:
+            if orient == mateapplet.ORIENT_UP or orient == mateapplet.ORIENT_DOWN:
                 box = gtk.HBox ()
             else:
                 box = gtk.VBox ()
             box.set_border_width (0)
 
             for widget in widgets:
-                if orient == gnomeapplet.ORIENT_RIGHT:
+                if orient == mateapplet.ORIENT_RIGHT:
                     widget.set_angle (90)
-                elif orient == gnomeapplet.ORIENT_LEFT:
+                elif orient == mateapplet.ORIENT_LEFT:
                     widget.set_angle (270)
                 else:
                     widget.set_angle (0)
@@ -314,11 +314,11 @@ class Applet (object):
             self.__conf.set_bool ("show_playback_button", True)
 
         if need_handle:
-            self.__applet.set_applet_flags (gnomeapplet.EXPAND_MAJOR |
-                                            gnomeapplet.EXPAND_MINOR |
-                                            gnomeapplet.HAS_HANDLE)
+            self.__applet.set_applet_flags (mateapplet.EXPAND_MAJOR |
+                                            mateapplet.EXPAND_MINOR |
+                                            mateapplet.HAS_HANDLE)
         else:
-            self.__applet.set_applet_flags (gnomeapplet.EXPAND_MINOR)
+            self.__applet.set_applet_flags (mateapplet.EXPAND_MINOR)
 
 
     def __layout_changed_cb (self, layout, pspec):
@@ -435,7 +435,7 @@ class Applet (object):
             self.__about_dialog.set_name (_("Panflute Applet"))
             self.__about_dialog.set_version (panflute.defs.VERSION)
             self.__about_dialog.set_copyright (_("(C) {0} Paul Kuliniewicz").format (2010))
-            self.__about_dialog.set_comments (_("Control your favorite music player from a GNOME panel."))
+            self.__about_dialog.set_comments (_("Control your favorite music player from a MATE panel."))
             self.__about_dialog.set_website ("https://launchpad.net/panflute/")
             self.__about_dialog.set_authors (["Paul Kuliniewicz <paul@kuliniewicz.org>"])
             self.__about_dialog.set_translator_credits (_("translator-credits"))
@@ -565,7 +565,7 @@ class ContextMenu (object):
         else:
             replacement = ""
 
-        with file (os.path.join (panflute.defs.DATA_DIR, "gnome-2.0", "ui", "GNOME_Panflute_Applet.xml"), "r") as f:
+        with file (os.path.join (panflute.defs.DATA_DIR, "mate-2.0", "ui", "MATE_Panflute_Applet.xml"), "r") as f:
             menu_xml = f.read ()
 
         menu_xml = menu_xml.replace ("<!--PLACEHOLDER-->", replacement)
@@ -653,7 +653,7 @@ class LayoutManager (gobject.GObject):
     creation of the widgets themselves.
 
     More specifically, it cleans up whatever widget order is specified inside
-    GConf and exposes it as a pair of lists: top row and bottom row.  It also
+    MateConf and exposes it as a pair of lists: top row and bottom row.  It also
     makes sure the widgets themselves show and hide themselves appropriately.
     """
 
@@ -738,7 +738,7 @@ class LayoutManager (gobject.GObject):
 
     def __widget_order_changed_cb (self, requested_order):
         """
-        Sanitize the requested widget order stored in GConf to ensure that
+        Sanitize the requested widget order stored in MateConf to ensure that
         all widgets are accounted for with no repeats and that everything
         spans at most two rows.
         """
@@ -1655,12 +1655,12 @@ gobject.type_register (Volume)
 
 def autodisconnect_conf_handlers (obj, conf, handlers):
     """
-    Automatically disconnect a set of GConf signal handlers when the object
+    Automatically disconnect a set of MateConf signal handlers when the object
     is destroyed.
     """
 
     def callback (obj):
-        obj.log.debug ("destroy - GConf handlers")
+        obj.log.debug ("destroy - MateConf handlers")
         for handler in handlers:
             conf.disconnect (handler)
 

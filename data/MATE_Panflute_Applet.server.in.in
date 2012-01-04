@@ -1,21 +1,21 @@
 <oaf_info>
-    <oaf_server iid="OAFIID:GNOME_Panflute_Applet_Factory" type="exe" location="@LIBEXECDIR@/panflute-applet">
+    <oaf_server iid="OAFIID:MATE_Panflute_Applet_Factory" type="exe" location="@LIBEXECDIR@/panflute-applet">
         <oaf_attribute name="repo_ids" type="stringv">
-            <item value="IDL:Bonobo/GenericFactory:1.0"/>
-            <item value="IDL:Bonobo/Unknown:1.0"/>
+            <item value="IDL:MateComponent/GenericFactory:1.0"/>
+            <item value="IDL:MateComponent/Unknown:1.0"/>
         </oaf_attribute>
         <oaf_attribute name="name" type="string" _value="Panflute Applet factory"/>
         <oaf_attribute name="description" type="string" _value="Panflute Applet factory"/>
-        <oaf_attribute name="bonobo:environment" type="stringv">
+        <oaf_attribute name="matecomponent:environment" type="stringv">
             <item value="DBUS_SESSION_BUS_ADDRESS"/>
         </oaf_attribute>
     </oaf_server>
 
-    <oaf_server iid="OAFIID:GNOME_Panflute_Applet" type="factory" location="OAFIID:GNOME_Panflute_Applet_Factory">
+    <oaf_server iid="OAFIID:MATE_Panflute_Applet" type="factory" location="OAFIID:MATE_Panflute_Applet_Factory">
         <oaf_attribute name="repo_ids" type="stringv">
-            <item value="IDL:GNOME/Vertigo/PanelAppletShell:1.0"/>
-            <item value="IDL:Bonobo/Control:1.0"/>
-            <item value="IDL:Bonobo/Unknown:1.0"/>
+            <item value="IDL:MATE/Vertigo/MatePanelAppletShell:1.0"/>
+            <item value="IDL:MateComponent/Control:1.0"/>
+            <item value="IDL:MateComponent/Unknown:1.0"/>
         </oaf_attribute>
         <oaf_attribute name="name" type="string" _value="Panflute Applet"/>
         <oaf_attribute name="description" type="string" _value="Control your favorite music player from the panel"/>

@@ -16,7 +16,7 @@ instdir/
 missing
 mkinstalldirs
 py-compile
-data/GNOME_Panflute_Applet.server
+data/MATE_Panflute_Applet.server
 data/Makefile
 data/Makefile.in
 data/org.kuliniewicz.Panflute.service

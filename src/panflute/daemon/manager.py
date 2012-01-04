@@ -45,7 +45,7 @@ import panflute.daemon.vlc
 
 import dbus
 import dbus.service
-import gconf
+import mateconf
 import sys
 
 
@@ -106,8 +106,8 @@ class Manager (object):
 
         self.__manager_proxy = panflute.daemon.connproxy.ManagerProxy (self, bus_name = self.__panflute_bus_name)
 
-        client = gconf.client_get_default ()
-        client.add_dir ("/apps/panflute/daemon", gconf.CLIENT_PRELOAD_NONE)
+        client = mateconf.client_get_default ()
+        client.add_dir ("/apps/panflute/daemon", mateconf.CLIENT_PRELOAD_NONE)
         client.notify_add ("/apps/panflute/daemon/preferred_player", self.__preferred_player_changed_cb)
         self.__expose_preferred (client.get_string ("/apps/panflute/daemon/preferred_player"))
 

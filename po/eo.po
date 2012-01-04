@@ -17,29 +17,29 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-10-31 15:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: ../data/GNOME_Panflute_Applet.server.in.in.h:1
+#: ../data/MATE_Panflute_Applet.server.in.in.h:1
 msgid "Control your favorite music player from the panel"
 msgstr "Kontrolu vian preferan muzikludilon de la panelo"
 
-#: ../data/GNOME_Panflute_Applet.server.in.in.h:2
+#: ../data/MATE_Panflute_Applet.server.in.in.h:2
 msgid "Multimedia"
 msgstr "Aŭdvidaĵo"
 
-#: ../data/GNOME_Panflute_Applet.server.in.in.h:3
+#: ../data/MATE_Panflute_Applet.server.in.in.h:3
 #: ../src/panflute/applet/applet.py:435
 msgid "Panflute Applet"
 msgstr "Panfuto-aplikaĵeto"
 
-#: ../data/GNOME_Panflute_Applet.server.in.in.h:4
+#: ../data/MATE_Panflute_Applet.server.in.in.h:4
 msgid "Panflute Applet factory"
 msgstr ""
 
-#: ../data/GNOME_Panflute_Applet.xml.h:1
+#: ../data/MATE_Panflute_Applet.xml.h:1
 msgid "_About"
 msgstr "Pri"
 
 #. PLACEHOLDER
-#: ../data/GNOME_Panflute_Applet.xml.h:3
+#: ../data/MATE_Panflute_Applet.xml.h:3
 msgid "_Preferences"
 msgstr "Agordoj"
 
@@ -364,7 +364,7 @@ msgid "(C) {0} Paul Kuliniewicz"
 msgstr ""
 
 #: ../src/panflute/applet/applet.py:438
-msgid "Control your favorite music player from a GNOME panel."
+msgid "Control your favorite music player from a MATE panel."
 msgstr ""
 
 #: ../src/panflute/applet/applet.py:441

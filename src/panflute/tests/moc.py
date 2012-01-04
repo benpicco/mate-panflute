@@ -25,7 +25,7 @@ from __future__ import absolute_import
 
 import panflute.tests.runner
 
-import gconf
+import mateconf
 import os.path
 
 
@@ -62,7 +62,7 @@ class Runner (panflute.tests.runner.Runner):
 
         self.__path = os.path.join (prefix, "bin/mocp")
 
-        client = gconf.client_get_default ()
+        client = mateconf.client_get_default ()
         client.set_string ("/apps/panflute/daemon/moc/command", self.__path)
 
         child = self.run_command ([self.__path, "--server"])

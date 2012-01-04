@@ -24,7 +24,7 @@ import panflute.defs
 import panflute.util
 
 import dbus.mainloop.glib
-import gnomeapplet
+import mateapplet
 import logging
 import os
 import os.path
@@ -47,7 +47,7 @@ def applet_factory (applet, iid):
 
 def setup_output ():
     """
-    If invoked from the GNOME panel, limit logging and write output to files
+    If invoked from the MATE panel, limit logging and write output to files
     to facilitate debugging.  Otherwise, log everything and dump to the
     console.
     """
@@ -73,7 +73,7 @@ def setup_output ():
 
             return
 
-    # No GNOME panel args found, so must have been run manually.
+    # No MATE panel args found, so must have been run manually.
 
     logging.basicConfig (stream = sys.stderr,
                          level = logging.DEBUG,
@@ -87,9 +87,9 @@ if __name__ == "__main__":
     panflute.util.init_i18n ()
     dbus.mainloop.glib.DBusGMainLoop (set_as_default = True)
 
-    logger.debug ("Registering with Bonobo")
-    gnomeapplet.bonobo_factory ("OAFIID:GNOME_Panflute_Applet_Factory",
-                                gnomeapplet.Applet.__gtype__,
+    logger.debug ("Registering with MateComponent")
+    mateapplet.matecomponent_factory ("OAFIID:MATE_Panflute_Applet_Factory",
+                                mateapplet.Applet.__gtype__,
                                 panflute.defs.PACKAGE,
                                 panflute.defs.VERSION,
                                 applet_factory)

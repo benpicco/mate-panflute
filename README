@@ -14,7 +14,7 @@ expose additional features not available through MPRIS, such as setting
 song ratings or being notified when the playback position changes
 (saving the need to repeatedly poll for this information).
 
-Panflute also comes with a GNOME panel applet to demonstrate how the
+Panflute also comes with a MATE panel applet to demonstrate how the
 Panflute backend daemon can be used.
 
 Panflute supports the following music players:
@@ -33,7 +33,7 @@ Panflute supports the following music players:
   * Pithos           - http://kevinmehall.net/p/pithos/
   * Qmmp             - http://qmmp.ylsoftware.com/
   * Quod Libet       - http://code.google.com/p/quodlibet/
-  * Rhythmbox        - http://projects.gnome.org/rhythmbox/
+  * Rhythmbox        - http://projects.mate.org/rhythmbox/
   * Songbird         - http://getsongbird.com/ via http://addons.songbirdnest.com/addon/1626?id=1626
   * VLC              - http://www.videolan.org/vlc/
   * XMMS             - http://legacy.xmms2.org/

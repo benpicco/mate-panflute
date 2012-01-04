@@ -63,7 +63,7 @@ class Connector (panflute.daemon.connector.DBusConnector):
     def launch (self):
         # Don't launch Banshee via D-Bus, because it has problems with radio
         # streams when launched like that.  See lp:535479 and
-        # https://bugzilla.gnome.org/show_bug.cgi?id=612658
+        # https://bugzilla.mate.org/show_bug.cgi?id=612658
 
         return self.launch_via_command ()
 

@@ -29,7 +29,7 @@ PKG_CHECK_MODULES(PYGOBJECT, [pygobject-2.0])
 AX_PYTHON_MODULE([dbus], [required])
 AX_PYTHON_MODULE([dbus.exceptions], [required])
 AX_PYTHON_MODULE([dbus.service], [required])
-AX_PYTHON_MODULE([gconf], [required])
+AX_PYTHON_MODULE([mateconf], [required])
 AX_PYTHON_MODULE([glib], [required])
 AX_PYTHON_MODULE([gobject], [required])
 
@@ -47,9 +47,9 @@ dnl Applet required dependencies
 
 PYGTK_MIN_VERSION=2.16
 PKG_CHECK_MODULES(PYGTK, [pygtk-2.0 >= $PYGTK_MIN_VERSION], [], [true])
-PKG_CHECK_MODULES(GNOME_PYTHON_DESKTOP, [gnome-python-desktop-2.0], [], [true])
+PKG_CHECK_MODULES(MATE_PYTHON_DESKTOP, [mate-python-desktop-2.0], [], [true])
 
-AX_PYTHON_MODULE([gnomeapplet])
+AX_PYTHON_MODULE([mateapplet])
 AX_PYTHON_MODULE([gtk])
 AX_PYTHON_MODULE([numpy])    dnl If PyGTK was built with it, will crash without it (lp:441527)
 AX_PYTHON_MODULE([pango])
@@ -61,15 +61,15 @@ PKG_CHECK_MODULES(PYNOTIFY, [notify-python], [], [])
 AX_PYTHON_MODULE([pynotify])
 
 dnl
-dnl GConf
+dnl MateConf
 dnl
 
-AC_PATH_PROG(GCONFTOOL, [gconftool-2], [no])
-if test "x$GCONFTOOL" = xno; then
-	AC_MSG_ERROR([gconftool-2 executable not found -- it should be installed as part of GConf])
+AC_PATH_PROG(MATECONFTOOL, [mateconftool-2], [no])
+if test "x$MATECONFTOOL" = xno; then
+	AC_MSG_ERROR([mateconftool-2 executable not found -- it should be installed as part of MateConf])
 fi
-AC_SUBST(GCONFTOOL)
-AM_GCONF_SOURCE_2
+AC_SUBST(MATECONFTOOL)
+AM_MATECONF_SOURCE_2
 
 dnl
 dnl i18n Support
@@ -144,10 +144,10 @@ if test "x$HAVE_PYMOD_XMMSCLIENT" != "xyes" -o "x$HAVE_PYMOD_XMMSCLIENT_GLIB" !=
 	warned_about_something="yes"
 fi
 
-if test "x$HAVE_PYMOD_GNOMEAPPLET" != "xyes" -o "x$HAVE_PYMOD_GTK" != "xyes" -o "x$HAVE_PYMOD_NUMPY" != "xyes" -o "x$HAVE_PYMOD_PANGO" != "xyes"; then
-	AC_MSG_WARN([The GNOME panel applet requires the following Python modules to be installed:])
-	if test "x$HAVE_PYMOD_GNOMEAPPLET" != "xyes"; then
-		AC_MSG_WARN([    * gnomeapplet])
+if test "x$HAVE_PYMOD_MATEAPPLET" != "xyes" -o "x$HAVE_PYMOD_GTK" != "xyes" -o "x$HAVE_PYMOD_NUMPY" != "xyes" -o "x$HAVE_PYMOD_PANGO" != "xyes"; then
+	AC_MSG_WARN([The MATE panel applet requires the following Python modules to be installed:])
+	if test "x$HAVE_PYMOD_MATEAPPLET" != "xyes"; then
+		AC_MSG_WARN([    * mateapplet])
 	fi
 	if test "x$HAVE_PYMOD_GTK" != "xyes"; then
 		AC_MSG_WARN([    * gtk])
@@ -162,12 +162,12 @@ if test "x$HAVE_PYMOD_GNOMEAPPLET" != "xyes" -o "x$HAVE_PYMOD_GTK" != "xyes" -o 
 fi
 
 if test -n "$PYGTK_PKG_ERRORS"; then
-	AC_MSG_WARN([The GNOME panel applet requires PyGTK $PYGTK_MIN_VERSION or later])
+	AC_MSG_WARN([The MATE panel applet requires PyGTK $PYGTK_MIN_VERSION or later])
 	warned_about_something="yes"
 fi
 
 if test "x$HAVE_PYMOD_PYNOTIFY" != "xyes"; then
-	AC_MSG_WARN([Popup notifications in the GNOME panel applet require the following Python modules to be installed:])
+	AC_MSG_WARN([Popup notifications in the MATE panel applet require the following Python modules to be installed:])
 	AC_MSG_WARN([    * pynotify])
 	warned_about_something="yes"
 fi

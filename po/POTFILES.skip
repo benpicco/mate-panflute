@@ -1,5 +1,5 @@
 data/debugger.ui
-data/GNOME_Panflute_Applet.server.in
+data/MATE_Panflute_Applet.server.in
 data/tester.ui
 src/panflute/__init__.py
 src/panflute/applet/__init__.py

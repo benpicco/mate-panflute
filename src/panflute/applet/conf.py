@@ -18,20 +18,20 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02111-1301, USA.
 
 """
-GConf utility object for the GNOME panel applet.
+MateConf utility object for the MATE panel applet.
 
 This object simplifies access to the applet-instance-specific keys
-stored in GConf.
+stored in MateConf.
 """
 
 from __future__ import absolute_import
 
-import gconf
+import mateconf
 
 
 class Conf (object):
     """
-    Helper object for accessing data stored in GConf.
+    Helper object for accessing data stored in MateConf.
     """
 
     from panflute.util import log
@@ -39,13 +39,13 @@ class Conf (object):
 
     def __init__ (self, applet):
         self.__root = applet.get_preferences_key ()
-        self.__client = gconf.client_get_default ()
-        self.log.info ("GConf root is {0}".format (self.__root))
+        self.__client = mateconf.client_get_default ()
+        self.log.info ("MateConf root is {0}".format (self.__root))
 
 
     def get_bool (self, key):
         """
-        Get a boolean value stored in GConf.
+        Get a boolean value stored in MateConf.
         """
 
         full_key = self.resolve_key (key)
@@ -54,7 +54,7 @@ class Conf (object):
 
     def set_bool (self, key, value):
         """
-        Set a boolean value stored in GConf.
+        Set a boolean value stored in MateConf.
         """
 
         full_key = self.resolve_key (key)
@@ -63,7 +63,7 @@ class Conf (object):
 
     def connect_bool (self, key, callback, call_now = False):
         """
-        Register a callback function for when a boolean GConf key's value
+        Register a callback function for when a boolean MateConf key's value
         changes.
 
         As compared to connect(), this simplifies the callback's interface
@@ -83,25 +83,25 @@ class Conf (object):
 
     def get_string_list (self, key):
         """
-        Get a list of strings stored in GConf.
+        Get a list of strings stored in MateConf.
         """
 
         full_key = self.resolve_key (key)
-        return self.__client.get_list (full_key, gconf.VALUE_STRING)
+        return self.__client.get_list (full_key, mateconf.VALUE_STRING)
 
 
     def set_string_list (self, key, values):
         """
-        Set a list of strings stored in GConf.
+        Set a list of strings stored in MateConf.
         """
 
         full_key = self.resolve_key (key)
-        self.__client.set_list (full_key, gconf.VALUE_STRING, values)
+        self.__client.set_list (full_key, mateconf.VALUE_STRING, values)
 
 
     def connect_string_list (self, key, callback, call_now = False):
         """
-        Register a callback function for when a string list GConf key's
+        Register a callback function for when a string list MateConf key's
         value changes.
 
         As compared to connect(), this simplifies the callback's interface
@@ -112,7 +112,7 @@ class Conf (object):
 
         def detailed_callback (client, id, entry, unused):
             if entry.value is not None:
-                callback ([v.get_string () for v in entry.value.get_list (gconf.VALUE_STRING)])
+                callback ([v.get_string () for v in entry.value.get_list (mateconf.VALUE_STRING)])
 
         if call_now:
             callback (self.get_string_list (key))
@@ -121,7 +121,7 @@ class Conf (object):
 
     def connect (self, key, callback):
         """
-        Register a callback function for when a GConf key's value changes.
+        Register a callback function for when a MateConf key's value changes.
 
         The caller is responsible for freeing this handler by passing the
         return value to the disconnect method of this object.

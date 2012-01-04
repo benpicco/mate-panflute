@@ -25,7 +25,7 @@ from __future__ import absolute_import
 
 import dbus
 import dbus.exceptions
-import gconf
+import mateconf
 import gobject
 import os
 import re
@@ -85,7 +85,7 @@ class Connector (gobject.GObject):
         Start the player.  Returns False if there was an obvious error, True
         otherwise.
 
-        By default, the appropriate command is looked up in GConf and executed.
+        By default, the appropriate command is looked up in MateConf and executed.
         Subclasses can replace this behavior with other techniques.
         """
 
@@ -94,11 +94,11 @@ class Connector (gobject.GObject):
 
     def launch_via_command (self):
         """
-        Start the player via the command stored in GConf.  This is normally
+        Start the player via the command stored in MateConf.  This is normally
         used as the if-all-else-fails way to launch a player.
         """
 
-        client = gconf.client_get_default ()
+        client = mateconf.client_get_default ()
         key = "/apps/panflute/daemon/{0}/launch_command".format (self.props.internal_name)
         command = client.get_string (key)
 

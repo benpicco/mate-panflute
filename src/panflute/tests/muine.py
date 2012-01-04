@@ -26,7 +26,7 @@ from __future__ import absolute_import
 import panflute.tests.runner
 
 import dbus
-import gconf
+import mateconf
 import os.path
 
 
@@ -50,18 +50,18 @@ class Runner (panflute.tests.runner.Runner):
 
 
     def prepare_single (self, prefix, user, password):
-        self.rmdirs ("~/.gnome2/muine")
+        self.rmdirs ("~/.mate2/muine")
 
-        client = gconf.client_get_default ()
+        client = mateconf.client_get_default ()
         client.recursive_unset ("/apps/muine", 0)
 
         path = os.path.join (prefix, "bin/muine")
         child = self.run_command ([path])
         self.set_child (child)
 
-        self.wait_for ("org.gnome.Muine", True)
-        proxy = self.bus.get_object ("org.gnome.Muine", "/org/gnome/Muine/Player")
-        self.__muine = dbus.Interface (proxy, "org.gnome.Muine.Player")
+        self.wait_for ("org.mate.Muine", True)
+        proxy = self.bus.get_object ("org.mate.Muine", "/org/mate/Muine/Player")
+        self.__muine = dbus.Interface (proxy, "org.mate.Muine.Player")
 
         for path in self.TONE_PATHS:
             self.__muine.QueueFile (path)
@@ -76,4 +76,4 @@ class Runner (panflute.tests.runner.Runner):
                 raise e
 
         self.__muine = None
-        self.wait_for ("org.gnome.Muine", False)
+        self.wait_for ("org.mate.Muine", False)

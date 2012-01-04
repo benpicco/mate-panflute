@@ -30,7 +30,7 @@ from __future__ import absolute_import, division
 
 import panflute.applet.stock
 
-import gnomeapplet
+import mateapplet
 import gobject
 import gtk
 import numpy
@@ -325,11 +325,11 @@ class Button (gtk.Button):
 
         if self.allocation is not None:
             if self.__angle == 0 or self.__angle == 180:
-                return max (self.allocation.height, gnomeapplet.SIZE_X_SMALL)
+                return max (self.allocation.height, mateapplet.SIZE_X_SMALL)
             else:
-                return max (self.allocation.width, gnomeapplet.SIZE_X_SMALL)
+                return max (self.allocation.width, mateapplet.SIZE_X_SMALL)
         else:
-            return gnomeapplet.SIZE_MEDIUM
+            return mateapplet.SIZE_MEDIUM
 
 
 gobject.type_register (Button)

@@ -28,7 +28,7 @@ import panflute.daemon.mpris
 import panflute.mpris
 import panflute.util
 
-import gconf
+import mateconf
 import glib
 import os
 import pyinotify
@@ -317,7 +317,7 @@ def moc_command (arg_string):
     Return a command line for invoking MOC.
     """
 
-    client = gconf.client_get_default ()
+    client = mateconf.client_get_default ()
     base_command = client.get_string ("/apps/panflute/daemon/moc/command")
     return "{0} {1}".format (base_command, arg_string)
 

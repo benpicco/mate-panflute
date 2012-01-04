@@ -40,7 +40,7 @@ class Connector (panflute.daemon.connector.DBusConnector):
 
     def __init__ (self):
         panflute.daemon.connector.DBusConnector.__init__ (self, "listen", "Listen",
-                                                          "org.gnome.Listen")
+                                                          "org.mate.Listen")
         self.props.icon_name = "listen"
 
 
@@ -69,8 +69,8 @@ class Root (panflute.daemon.mpris.Root):
         panflute.daemon.mpris.Root.__init__ (self, "Listen", **kwargs)
 
         bus = dbus.SessionBus ()
-        proxy = bus.get_object ("org.gnome.Listen", "/org/gnome/listen")
-        self.__player = dbus.Interface (proxy, "org.gnome.Listen")
+        proxy = bus.get_object ("org.mate.Listen", "/org/mate/listen")
+        self.__player = dbus.Interface (proxy, "org.mate.Listen")
 
 
     def do_Quit (self):
@@ -97,8 +97,8 @@ class Player (panflute.daemon.mpris.Player):
         self.__uri = None
 
         bus = dbus.SessionBus ()
-        proxy = bus.get_object ("org.gnome.Listen", "/org/gnome/listen")
-        self.__player = dbus.Interface (proxy, "org.gnome.Listen")
+        proxy = bus.get_object ("org.mate.Listen", "/org/mate/listen")
+        self.__player = dbus.Interface (proxy, "org.mate.Listen")
 
         self.__poll_everything_source = gobject.timeout_add (self.POLL_INTERVAL, self.__poll_everything_cb)
         self.__poll_everything_cb ()
