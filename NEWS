@@ -1,0 +1,230 @@
+Panflute 0.7.0  (31 October 2010)
+=================================
+
+New players:
+
+ * Added support for Clementine.  Fixes lp:584711
+
+ * Added support for Decibel.  Fixes lp:523595
+
+ * Added support for Pithos.  Fixes lp:618850
+
+ * Added support for Qmmp.  Fixes lp:596521
+
+New features:
+
+ * Added support for gracefully switching between multiple players that may
+   be running simultaneously.  Fixes lp:596511, lp:602173
+
+ * Added support for controlling the player's volume.  Fixes lp:498730
+
+ * Use separate buttons for Pause and Stop, to better support players that
+   can pause streams.  Fixes lp:516891
+
+ * Added support for seeking using mouse-scroll on the time indicator.
+   Fixes lp:606966
+
+ * Added support for removing the rating from a song.  Fixes lp:616573
+
+ * The daemon now reports which features are supported by the current player.
+   Fixes lp:477471
+
+ * Added graphical debugger and player test harness to support development.
+
+ * Have the daemon process save an error log by default, to facilitate bug
+   reporting and diagnostics.
+
+Bugs fixed:
+
+ * Fixed error handling in communications with MOC, preventing Panflute from
+   trying to repeatedly spawn MOC on its own.  Fixes lp:588827
+
+ * Indicate in the applet when the player doesn't allow ratings to be set.
+   Fixes lp:576521
+
+ * Fixed handling of non-ASCII characters in MPD metadata.  Fixes lp:596514
+
+ * Gracefully handle multiple instances of the same player.  Fixes lp:602040
+
+ * Fixed operation of the "Add" button in the Preferences dialog when using
+   GTK+ 2.20 or later.  Fixes lp:603251
+
+ * Check all possible locations of album art files from Banshee.  Fixes
+   lp:618190
+
+ * Fixed backlog of song change notifications when rapidly changing songs.
+   Fixes lp:471499
+
+ * Make the behavior of the seek bar more intuitive.  Fixes lp:540441
+
+ * Handle players like Quod Libet that don't use a five-point rating scale.
+   Fixes lp:607555
+
+ * Fixed metadata handling, elapsed time polling, and connection establishment
+   for recent versions of XMMS2.
+
+ * Fixed Banshee version detection to work when Banshee is not installed
+   under $PATH.
+
+ * Fixed retrival of ratings from Exaile 0.3.x.
+
+ * Fixed reporting of elapsed time from Listen.
+
+Translations:
+
+ * Added German (de) translation.
+
+ * Updated Czech (cs) translation.
+
+ * Updated French (fr) translation.
+
+ * Updated Polish (pl) translation.
+
+
+Panflute 0.6.2  (14 March 2010)
+===============================
+
+Bugs fixed:
+
+ * Fixed incorrect play/pause button behavior with Exaile 0.3.0 and later.
+   Fixes lp:515253
+
+ * Recover from a wider variety of errors when loading player support
+   modules.  Fixes lp:523696
+
+ * Fixed increasing CPU usage by song info tooltips.  Fixes lp:531102
+
+ * Don't launch Banshee via D-Bus to work around a Banshee bug that prevents
+   radio streams from playing.  Fixes lp:535479
+
+ * Fixed format string error in Polish (pl) translation.  Fixes lp:521502
+
+Translations:
+
+ * Added Czech (cs) translation.
+
+ * Added French (fr) translation.
+
+ * Added Dutch (nl) translation.
+
+ * Added Portuguese (pt) translation.
+
+ * Updated Spanish (es) translation.
+
+ * Updated Polish (pl) translation.
+
+
+Panflute 0.6.1  (31 January 2010)
+=================================
+
+New features:
+
+ * Added support for displaying Track Number, Genre, and Year in the song
+   info display.  Fixes lp:510679
+
+Bugs fixed:
+
+ * Fixed reporting of song pausability when VLC 1.0.x first starts to play.
+   Fixes lp:481061
+
+ * Support rating songs in Banshee (requires Banshee 1.5.3 or later).
+   Fixes lp:475155
+
+Translations:
+
+ * Updated Polish (pl) translation.
+
+
+Panflute 0.6.0  (5 January 2010)
+================================
+
+New Features:
+
+ * Allow configuration of the song information displayed in the applet.
+   Fixes lp:460989
+
+ * Allow clicking or mouse-scrolling through the song information displayed
+   in the applet.  Fixes lp:497545
+
+ * Allow seeking within the current song via the applet.  Fixes lp:434393
+
+ * Amarok 1.4 support.  Fixes lp:478873
+
+ * Exaile 0.3 support.  Fixes lp:472943
+
+ * Guayadeque support.  Fixes lp:412314
+
+ * Listen support.  Fixes lp:421496
+
+ * MOC support.  Fixes lp:415670
+
+ * Songbird support.  Fixes lp:412312
+
+Bugs fixed:
+
+ * Fixed desynchronization with VLC 1.0.x.  Fixes lp:481061
+
+ * Properly convert cover art file names to file:// URLs, and support
+   http:// and https:// cover art URLs.  Fixes lp:483118, lp:485279
+
+ * Recover from malformed song information reported by the backend player.
+   Fixes lp:483120
+
+ * Properly handle exception when trying to close a notification popup that
+   has already been closed.  Fixes lp:483122
+
+Translations:
+
+ * Added Spanish (es) translation.
+
+ * Added Polish (pl) translation.
+
+Other notes:
+
+ * The dependency on PyGTK has been raised to version 2.16.
+
+
+Panflute 0.5.3  (7 November 2009)
+=================================
+
+* Show the Panflute icon in the panel's applet list.  Fixes lp:472931
+
+* Fix a typo in the GConf schema file.
+
+
+Panflute 0.5.2  (31 October 2009)
+=================================
+
+* Don't crash in the applet if PyGTK wasn't compiled using NumPy.
+  Fixes lp:457149
+
+* Draw the entire applet using the panel's background and the correct
+  theme colors.  Fixes lp:460986
+
+* Launch music players in a separate process subgroup, to prevent a
+  Ctrl-C to the daemon from terminating them too.  Fixes lp:460127
+
+
+Panflute 0.5.1  (17 October 2009)
+=================================
+
+* Use the correct mode when redirecting launched players' standard I/O
+  streams to /dev/null, so that they don't fail when trying to write to
+  stdout or stderr.  Fixes lp:441551
+
+* Handle the case where VLC reports no song metadata, to prevent the
+  apparent state from getting stuck.  Fixes lp:448405
+
+* Check for the numpy Python module at configure time, without which the
+  applet crashes.  Fixes lp:441527
+
+* Draw button icons and rating stars as large as possible in the applet.
+  Fixes lp:441589
+
+
+Panflute 0.5.0  (21 September 2009)
+===================================
+
+* Initial release.
+
+* Feature parity with Music Applet 2.5.1.

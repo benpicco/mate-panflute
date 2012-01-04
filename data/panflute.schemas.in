@@ -1,0 +1,398 @@
+<gconfschemafile>
+    <schemalist>
+
+        <!-- Daemon schemas -->
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/preferred_player</key>
+            <applyto>/apps/panflute/daemon/preferred_player</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <!-- TODO: Figure out a way to auto-detect something installed, instead of hard-coding it. -->
+            <default>rhythmbox</default>
+            <locale name="C">
+                <short>Name of the preferred player.</short>
+                <long>Internal name of the player that should be used when there is a choice of players available.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/amarok/launch_command</key>
+            <applyto>/apps/panflute/daemon/amarok/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>amarok</default>
+            <locale name="C">
+                <short>Command to launch Amarok.</short>
+                <long>The command to launch Amarok, if D-Bus activation fails.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/audacious/launch_command</key>
+            <applyto>/apps/panflute/daemon/audacious/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>audacious2 || audacious</default>
+            <locale name="C">
+                <short>Command to launch Audacious.</short>
+                <long>The command to launch Audacious, if D-Bus activation fails.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/banshee/launch_command</key>
+            <applyto>/apps/panflute/daemon/banshee/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>banshee</default>
+            <locale name="C">
+                <short>Command to launch Banshee.</short>
+                <long>The command to launch Banshee, if D-Bus activation fails.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/clementine/launch_command</key>
+            <applyto>/apps/panflute/daemon/clementine/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>clementine</default>
+            <locale name="C">
+                <short>Command to launch Clementine.</short>
+                <long>The command to launch Clementine, if D-Bus activation fails.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/decibel/launch_command</key>
+            <applyto>/apps/panflute/daemon/decibel/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>decibel-audio-player</default>
+            <locale name="C">
+                <short>Command to launch Decibel.</short>
+                <long>The command to launch Decibel, if D-Bus activation fails.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/exaile/launch_command</key>
+            <applyto>/apps/panflute/daemon/exaile/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>exaile</default>
+            <locale name="C">
+                <short>Command to launch Exaile.</short>
+                <long>The command to launch Exaile, if D-Bus activation fails.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/guayadeque/launch_command</key>
+            <applyto>/apps/panflute/daemon/guayadeque/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>guayadeque</default>
+            <locale name="C">
+                <short>Command to launch Guayadeque.</short>
+                <long>The command to launch Guayadeque, if D-Bus activation fails.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/listen/launch_command</key>
+            <applyto>/apps/panflute/daemon/listen/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>listen</default>
+            <locale name="C">
+                <short>Command to launch Listen.</short>
+                <long>The command to launch Listen, if D-Bus activation fails.</long>
+            </locale>
+        </schema>
+
+        <!-- Note that MOC does *not* use launch_command! -->
+        <schema>
+            <key>/schemas/apps/panflute/daemon/moc/command</key>
+            <applyto>/apps/panflute/daemon/moc/command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>mocp</default>
+            <locale name="C">
+                <short>Command to invoke MOC.</short>
+                <long>The command to invoke MOC.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/mpd/launch_command</key>
+            <applyto>/apps/panflute/daemon/mpd/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>mpd</default>
+            <locale name="C">
+                <short>Command to launch MPD.</short>
+                <long>The command to launch MPD.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/muine/launch_command</key>
+            <applyto>/apps/panflute/daemon/muine/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>muine</default>
+            <locale name="C">
+                <short>Command to launch Muine.</short>
+                <long>The command to launch Muine, if D-Bus activation fails.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/pithos/launch_command</key>
+            <applyto>/apps/panflute/daemon/pithos/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>pithos</default>
+            <locale name="C">
+                <short>Command to launch Pithos.</short>
+                <long>The command to launch Pithos, if D-Bus activation fails.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/qmmp/launch_command</key>
+            <applyto>/apps/panflute/daemon/qmmp/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>qmmp</default>
+            <locale name="C">
+                <short>Command to launch Qmmp.</short>
+                <long>The command to launch Qmmp, if D-Bus activation fails.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/quod_libet/launch_command</key>
+            <applyto>/apps/panflute/daemon/quod_libet/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>quodlibet</default>
+            <locale name="C">
+                <short>Command to launch Quod Libet.</short>
+                <long>The command to launch Quod Libet, if D-Bus activation fails.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/rhythmbox/launch_command</key>
+            <applyto>/apps/panflute/daemon/rhythmbox/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>rhythmbox</default>
+            <locale name="C">
+                <short>Command to launch Rhythmbox.</short>
+                <long>The command to launch Rhythmbox, if D-Bus activation fails.</long>
+            </locale>
+        </schema>
+	
+        <schema>
+            <key>/schemas/apps/panflute/daemon/songbird/launch_command</key>
+            <applyto>/apps/panflute/daemon/songbird/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>songbird</default>
+            <locale name="C">
+                <short>Command to launch Songbird.</short>
+                <long>The command to launch Songbird, if D-Bus activation fails.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/vlc/launch_command</key>
+            <applyto>/apps/panflute/daemon/vlc/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>vlc</default>
+            <locale name="C">
+                <short>Command to launch VLC.</short>
+                <long>The command to launch VLC, if D-Bus activation fails.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/xmms/launch_command</key>
+            <applyto>/apps/panflute/daemon/xmms/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>xmms</default>
+            <locale name="C">
+                <short>Command to launch XMMS.</short>
+                <long>The command to launch XMMS.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/daemon/xmms2/launch_command</key>
+            <applyto>/apps/panflute/daemon/xmms2/launch_command</applyto>
+            <owner>panflute</owner>
+            <type>string</type>
+            <default>xmms2-launcher</default>
+            <locale name="C">
+                <short>Command to launch XMMS2.</short>
+                <long>The command to launch XMMS2.</long>
+            </locale>
+        </schema>
+
+        <!-- Applet schemas -->
+
+        <schema>
+            <key>/schemas/apps/panflute/applet/prefs/show_remaining_time</key>
+            <owner>panflute</owner>
+            <type>bool</type>
+            <default>0</default>
+            <locale name="C">
+                <short>Show remaining time</short>
+                <long>If true, show remaining time instead of elapsed time.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/applet/prefs/show_notifications</key>
+            <owner>panflute</owner>
+            <type>bool</type>
+            <default>1</default>
+            <locale name="C">
+                <short>Show notifications of song changes</short>
+                <long>If true, display a notification popup whenever the song changes.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/applet/prefs/metadata_lines</key>
+            <owner>panflute</owner>
+            <type>list</type>
+            <list_type>string</list_type>
+            <default>[{title},{artist},{album}]</default>
+            <locale name="C">
+                <short>Format strings for the Song Info widget</short>
+                <long>Python-style format strings for the information displayed in the Song Info widget.  Pango markup is allowed.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/applet/prefs/widget_order</key>
+            <owner>panflute</owner>
+            <type>list</type>
+            <list_type>string</list_type>
+            <default>[song_info,-,rating,time_bar,time_label,previous_button,playback_button,stop_button,next_button,volume]</default>
+            <locale name="C">
+                <short>Widget layout order widgets</short>
+                <long>The order in which widgets should be laid out in the applet.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/applet/prefs/show_song_info</key>
+            <owner>panflute</owner>
+            <type>bool</type>
+            <default>1</default>
+            <locale name="C">
+                <short>Show the Song Info widget</short>
+                <long>Show the Song Info widget in the applet.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/applet/prefs/show_rating</key>
+            <owner>panflute</owner>
+            <type>bool</type>
+            <default>1</default>
+            <locale name="C">
+                <short>Show the Rating widget</short>
+                <long>Show the Rating widget in the applet.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/applet/prefs/show_time_label</key>
+            <owner>panflute</owner>
+            <type>bool</type>
+            <default>1</default>
+            <locale name="C">
+                <short>Show the Time label</short>
+                <long>Show the Time label in the applet.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/applet/prefs/show_time_bar</key>
+            <owner>panflute</owner>
+            <type>bool</type>
+            <default>0</default>
+            <locale name="C">
+                <short>Show the Seek bar</short>
+                <long>Show the Seek bar in the applet.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/applet/prefs/show_previous_button</key>
+            <owner>panflute</owner>
+            <type>bool</type>
+            <default>1</default>
+            <locale name="C">
+                <short>Show the Previous button</short>
+                <long>Show the Previous button in the applet.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/applet/prefs/show_playback_button</key>
+            <owner>panflute</owner>
+            <type>bool</type>
+            <default>1</default>
+            <locale name="C">
+                <short>Show the Playback button</short>
+                <long>Show the Playback button in the applet.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/applet/prefs/show_stop_button</key>
+            <owner>panflute</owner>
+            <type>bool</type>
+            <default>1</default>
+            <locale name="C">
+                <short>Show the Stop button</short>
+                <long>Show the Stop button in the applet.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/applet/prefs/show_next_button</key>
+            <owner>panflute</owner>
+            <type>bool</type>
+            <default>1</default>
+            <locale name="C">
+                <short>Show the Next button</short>
+                <long>Show the Next button in the applet.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/panflute/applet/prefs/show_volume</key>
+            <owner>panflute</owner>
+            <type>bool</type>
+            <default>0</default>
+            <locale name="C">
+                <short>Show the Volume slider</short>
+                <long>Show the Volume slider in the applet.</long>
+            </locale>
+        </schema>
+
+    </schemalist>
+</gconfschemafile>
+
+<!-- vim: set ft=xml: -->

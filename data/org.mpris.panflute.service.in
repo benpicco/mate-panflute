@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.mpris.panflute
+Exec=@BINDIR@/panflute-launch-player

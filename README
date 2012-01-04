@@ -1,0 +1,47 @@
+Panflute provides a common interface for controlling music player
+software.  While most music players offer some way to let other programs
+control them and get status information, most of them implement their
+own unique interface.  Even the players that implement an MPRIS
+interface often have quirks unique to their particular implementation.
+These issues make it difficult for a program to communicate with
+whichever music player the user happens to prefer.
+
+Panflute solves this problem by handling all the player-specific details
+for you.  It exposes a MPRIS interface that hides the details of
+whichever player is running, allowing remote-player-control applications
+to code to a single interface.  Panflute also provides extensions that
+expose additional features not available through MPRIS, such as setting
+song ratings or being notified when the playback position changes
+(saving the need to repeatedly poll for this information).
+
+Panflute also comes with a GNOME panel applet to demonstrate how the
+Panflute backend daemon can be used.
+
+Panflute supports the following music players:
+
+  * Amarok (>= 1.4)  - http://amarok.kde.org/
+  * Audacious        - http://audacious-media-player.org/
+  * Banshee (>= 1.0) - http://banshee.fm/
+  * Clementine       - http://www.clementine-player.org/
+  * Decibel          - http://decibel.silent-blade.org/
+  * Exaile           - http://www.exaile.org/
+  * Guayadeque       - http://sourceforge.net/projects/guayadeque/
+  * Listen           - http://www.listen-project.org/
+  * MOC              - http://moc.daper.net/
+  * MPD              - http://mpd.wikia.com/
+  * Muine            - http://muine.gooeylinux.org/
+  * Pithos           - http://kevinmehall.net/p/pithos/
+  * Qmmp             - http://qmmp.ylsoftware.com/
+  * Quod Libet       - http://code.google.com/p/quodlibet/
+  * Rhythmbox        - http://projects.gnome.org/rhythmbox/
+  * Songbird         - http://getsongbird.com/ via http://addons.songbirdnest.com/addon/1626?id=1626
+  * VLC              - http://www.videolan.org/vlc/
+  * XMMS             - http://legacy.xmms2.org/
+  * XMMS2            - http://xmms2.org/
+
+Panflute is the successor to Music Applet, redesigned from the ground up
+to allow other programs to use its music player abstraction layer.
+
+Panflute development is hosted at Launchpad:
+
+    https://launchpad.net/panflute

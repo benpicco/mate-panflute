@@ -1,0 +1,71 @@
+#! /usr/bin/env python
+
+# Panflute
+# Copyright (C) 2010 Paul Kuliniewicz <paul@kuliniewicz.org>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02111-1301, USA.
+
+from __future__ import absolute_import, print_function
+
+import panflute.tests.testcase
+import panflute.tests.tester
+import panflute.util
+
+import dbus.mainloop.glib
+import glib
+import gtk
+import sys
+
+
+def subprocess_cb (main_loop):
+    player_name = sys.argv[2]
+    daemon_prefix = sys.argv[3]
+    prefix = sys.argv[4]
+    user = sys.argv[5]
+    password = sys.argv[6]
+    test_names = sys.argv[7:]
+
+    tests = filter (lambda test: test.__class__.__name__ in test_names, panflute.tests.testcase.ALL_TESTS)
+
+    runner = panflute.tests.tester.Tester.PLAYERS[player_name].Runner (
+            main_loop, daemon_prefix, prefix, user, password, tests)
+    print ("DEBUG: starting runner", file = sys.stderr)
+    runner.start ()
+
+    return False
+
+
+if __name__ == "__main__":
+    panflute.util.init_i18n ()
+    glib.threads_init ()
+    dbus.mainloop.glib.DBusGMainLoop (set_as_default = True)
+
+    if "--destroy-my-data" in sys.argv:
+        tester = panflute.tests.tester.create_tester ()
+        tester.show ()
+        gtk.main ()
+
+    elif "--subprocess" in sys.argv:
+        main_loop = glib.MainLoop ()
+        glib.idle_add (subprocess_cb, main_loop)
+        print ("DEBUG: starting main loop", file = sys.stderr)
+        main_loop.run ()
+
+    else:
+        print ("Running Panflute test cases WILL destroy your music index, configuration, and")
+        print ("all other data managed by your favorite music player!")
+        print ()
+        print ("Run panflute-tests with --destroy-my-data if you're OK with this.")
+        sys.exit (1)

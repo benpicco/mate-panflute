@@ -1,0 +1,487 @@
+# Spanish translation for panflute
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the panflute package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: panflute\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-10-17 21:22-0400\n"
+"PO-Revision-Date: 2010-01-31 21:41+0000\n"
+"Last-Translator: Adrián García <Unknown>\n"
+"Language-Team: Spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-10-31 15:00+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: ../data/GNOME_Panflute_Applet.server.in.in.h:1
+msgid "Control your favorite music player from the panel"
+msgstr "Controla tu reproductor de música favorito desde el panel"
+
+#: ../data/GNOME_Panflute_Applet.server.in.in.h:2
+msgid "Multimedia"
+msgstr "Multimedia"
+
+#: ../data/GNOME_Panflute_Applet.server.in.in.h:3
+#: ../src/panflute/applet/applet.py:435
+msgid "Panflute Applet"
+msgstr "Applet Panflute"
+
+#: ../data/GNOME_Panflute_Applet.server.in.in.h:4
+msgid "Panflute Applet factory"
+msgstr "Factoría del Applet Panflute"
+
+#: ../data/GNOME_Panflute_Applet.xml.h:1
+msgid "_About"
+msgstr "_Acerca de"
+
+#. PLACEHOLDER
+#: ../data/GNOME_Panflute_Applet.xml.h:3
+msgid "_Preferences"
+msgstr "_Preferencias"
+
+#: ../data/panflute.schemas.in.h:1
+msgid "Command to invoke MOC."
+msgstr "Comando para invocar MOC."
+
+#: ../data/panflute.schemas.in.h:2
+msgid "Command to launch Amarok."
+msgstr "Comando para lanzar Amarok."
+
+#: ../data/panflute.schemas.in.h:3
+msgid "Command to launch Audacious."
+msgstr "Comando para lanzar Audacious."
+
+#: ../data/panflute.schemas.in.h:4
+msgid "Command to launch Banshee."
+msgstr "Comando para lanzar Banshee."
+
+#: ../data/panflute.schemas.in.h:5
+msgid "Command to launch Exaile."
+msgstr "Comando para lanzar Exaile."
+
+#: ../data/panflute.schemas.in.h:6
+msgid "Command to launch Guayadeque."
+msgstr "Comando para lanzar Guayadeque."
+
+#: ../data/panflute.schemas.in.h:7
+msgid "Command to launch Listen."
+msgstr "Comando para lanzar Listen."
+
+#: ../data/panflute.schemas.in.h:8
+msgid "Command to launch MPD."
+msgstr "Comando para lanzar MPD."
+
+#: ../data/panflute.schemas.in.h:9
+msgid "Command to launch Muine."
+msgstr "Comando para lanzar Muine."
+
+#: ../data/panflute.schemas.in.h:10
+msgid "Command to launch Quod Libet."
+msgstr "Comando para lanzar Quod Libet."
+
+#: ../data/panflute.schemas.in.h:11
+msgid "Command to launch Rhythmbox."
+msgstr "Comando para lanzar Rhythmbox."
+
+#: ../data/panflute.schemas.in.h:12
+msgid "Command to launch Songbird."
+msgstr "Comando para lanzar Songbird."
+
+#: ../data/panflute.schemas.in.h:13
+msgid "Command to launch VLC."
+msgstr "Comando para lanzar VLC."
+
+#: ../data/panflute.schemas.in.h:14
+msgid "Command to launch XMMS."
+msgstr "Comando para lanzar XMMS."
+
+#: ../data/panflute.schemas.in.h:15
+msgid "Command to launch XMMS2."
+msgstr "Comando para lanzar XMMS2."
+
+#: ../data/panflute.schemas.in.h:16
+msgid "Format strings for the Song Info widget"
+msgstr "Formato de las cadenas para el widget de información de la canción"
+
+#: ../data/panflute.schemas.in.h:17
+msgid "If true, display a notification popup whenever the song changes."
+msgstr "Si está activado, muestra una notificación cuando cambia la canción."
+
+#: ../data/panflute.schemas.in.h:18
+msgid "If true, show remaining time instead of elapsed time."
+msgstr ""
+"Si está activado, muestra el tiempo restante en vez del tiempo transcurrido."
+
+#: ../data/panflute.schemas.in.h:19
+msgid ""
+"Internal name of the player that should be used when there is a choice of "
+"players available."
+msgstr ""
+"Nombre interno del reproductor que se debe usar cuando se puede elegir entre "
+"varios reproductores disponibles."
+
+#: ../data/panflute.schemas.in.h:20
+msgid "Name of the preferred player."
+msgstr "Nombre del reproductor preferido."
+
+#: ../data/panflute.schemas.in.h:21
+msgid ""
+"Python-style format strings for the information displayed in the Song Info "
+"widget. Pango markup is allowed."
+msgstr ""
+"Estilo-Python del formato de las cadenas para la información que aparece en "
+"el widget de información de la canción. El marcado de Pango está permitido."
+
+#: ../data/panflute.schemas.in.h:22
+msgid "Show notifications of song changes"
+msgstr "Mostrar notificaciones al cambiar de canción"
+
+#: ../data/panflute.schemas.in.h:23
+msgid "Show remaining time"
+msgstr "Mostrar el tiempo restante"
+
+#: ../data/panflute.schemas.in.h:24
+msgid "Show the Next button"
+msgstr "Mostrar el botón de Siguiente"
+
+#: ../data/panflute.schemas.in.h:25
+msgid "Show the Next button in the applet."
+msgstr "Mostrar el botón de Siguiente en el applet."
+
+#: ../data/panflute.schemas.in.h:26
+msgid "Show the Playback button"
+msgstr "Mostrar el botón de Reproducción"
+
+#: ../data/panflute.schemas.in.h:27
+msgid "Show the Playback button in the applet."
+msgstr "Mostrar el botón de Reproducción en el applet."
+
+#: ../data/panflute.schemas.in.h:28
+msgid "Show the Previous button"
+msgstr "Mostrar el botón de Anterior"
+
+#: ../data/panflute.schemas.in.h:29
+msgid "Show the Previous button in the applet."
+msgstr "Mostrar el botón de Anterior en el applet."
+
+#: ../data/panflute.schemas.in.h:30
+msgid "Show the Rating widget"
+msgstr "Mostrar la puntuación"
+
+#: ../data/panflute.schemas.in.h:31
+msgid "Show the Rating widget in the applet."
+msgstr "Mostrar la puntuación en el applet."
+
+#: ../data/panflute.schemas.in.h:32
+msgid "Show the Seek bar"
+msgstr "Mostrar la barra de búsqueda"
+
+#: ../data/panflute.schemas.in.h:33
+msgid "Show the Seek bar in the applet."
+msgstr "Mostrar la barra de búsqueda en el applet."
+
+#: ../data/panflute.schemas.in.h:34
+msgid "Show the Song Info widget"
+msgstr "Mostrar la información de la canción"
+
+#: ../data/panflute.schemas.in.h:35
+msgid "Show the Song Info widget in the applet."
+msgstr "Mostrar la información de la canción en el applet."
+
+#: ../data/panflute.schemas.in.h:36
+msgid "Show the Stop button"
+msgstr ""
+
+#: ../data/panflute.schemas.in.h:37
+msgid "Show the Stop button in the applet."
+msgstr ""
+
+#: ../data/panflute.schemas.in.h:38
+msgid "Show the Time label"
+msgstr "Mostrar la etiqueta de tiempo"
+
+#: ../data/panflute.schemas.in.h:39
+msgid "Show the Time label in the applet."
+msgstr "Mostrar la etiqueta de tiempo en el applet."
+
+#: ../data/panflute.schemas.in.h:40
+msgid "Show the Volume slider"
+msgstr ""
+
+#: ../data/panflute.schemas.in.h:41
+msgid "Show the Volume slider in the applet."
+msgstr ""
+
+#: ../data/panflute.schemas.in.h:42
+msgid "The command to invoke MOC."
+msgstr "El comando para invocar MOC."
+
+#: ../data/panflute.schemas.in.h:43
+msgid "The command to launch Amarok, if D-Bus activation fails."
+msgstr "El comando para lanzar Amarok, si la activación por D-Bus falla."
+
+#: ../data/panflute.schemas.in.h:44
+msgid "The command to launch Audacious, if D-Bus activation fails."
+msgstr "El comando para lanzar Audacious, si la activación por D-Bus falla."
+
+#: ../data/panflute.schemas.in.h:45
+msgid "The command to launch Banshee, if D-Bus activation fails."
+msgstr "El comando para lanzar Banshee, si la activación por D-Bus falla."
+
+#: ../data/panflute.schemas.in.h:46
+msgid "The command to launch Exaile, if D-Bus activation fails."
+msgstr "El comando para lanzar Exaile, si la activación por D-Bus falla."
+
+#: ../data/panflute.schemas.in.h:47
+msgid "The command to launch Guayadeque, if D-Bus activation fails."
+msgstr "El comando para lanzar Guayadeque, si la activación por D-Bus falla."
+
+#: ../data/panflute.schemas.in.h:48
+msgid "The command to launch Listen, if D-Bus activation fails."
+msgstr "El comando para lanzar Listen, si la activación por D-Bus falla."
+
+#: ../data/panflute.schemas.in.h:49
+msgid "The command to launch MPD."
+msgstr "El comando para lanzar MPD."
+
+#: ../data/panflute.schemas.in.h:50
+msgid "The command to launch Muine, if D-Bus activation fails."
+msgstr "El comando para lanzar Muine, si la activación por D-Bus falla."
+
+#: ../data/panflute.schemas.in.h:51
+msgid "The command to launch Quod Libet, if D-Bus activation fails."
+msgstr "El comando para lanzar Quod Libet, si la activación por D-Bus falla."
+
+#: ../data/panflute.schemas.in.h:52
+msgid "The command to launch Rhythmbox, if D-Bus activation fails."
+msgstr "El comando para lanzar Rhythmbox, si la activación por D-Bus falla."
+
+#: ../data/panflute.schemas.in.h:53
+msgid "The command to launch Songbird, if D-Bus activation fails."
+msgstr "El comando para lanzar Songbird, si la activación por D-Bus falla."
+
+#: ../data/panflute.schemas.in.h:54
+msgid "The command to launch VLC, if D-Bus activation fails."
+msgstr "El comando para lanzar VLC, si la activación por D-Bus falla."
+
+#: ../data/panflute.schemas.in.h:55
+msgid "The command to launch XMMS."
+msgstr "El comando para lanzar XMMS."
+
+#: ../data/panflute.schemas.in.h:56
+msgid "The command to launch XMMS2."
+msgstr "El comando para lanzar XMMS2."
+
+#: ../data/panflute.schemas.in.h:57
+msgid "The order in which widgets should be laid out in the applet."
+msgstr "El orden en que deben establecerse los widgets en el applet."
+
+#: ../data/panflute.schemas.in.h:58
+msgid "Widget layout order widgets"
+msgstr "Disposición del widget para ordenar los widgets"
+
+#: ../data/preferences.ui.h:1
+msgid "<b>Layout</b>"
+msgstr "<b>Disposición</b>"
+
+#: ../data/preferences.ui.h:2
+msgid "<b>Options</b>"
+msgstr "<b>Opciones</b>"
+
+#: ../data/preferences.ui.h:3
+msgid "<b>Song info</b>"
+msgstr "<b>Información de la canción</b>"
+
+#: ../data/preferences.ui.h:4
+msgid "<b>Time display</b>"
+msgstr "<b>Mostrar tiempo</b>"
+
+#: ../data/preferences.ui.h:5
+msgid "Album"
+msgstr "Álbum"
+
+#: ../data/preferences.ui.h:6
+msgid "Artist"
+msgstr "Artista"
+
+#: ../data/preferences.ui.h:7
+msgid "De_fault"
+msgstr ""
+
+#: ../data/preferences.ui.h:8
+msgid "Duration"
+msgstr "Duración"
+
+#: ../data/preferences.ui.h:9
+msgid "Genre"
+msgstr "Género"
+
+#: ../data/preferences.ui.h:10
+msgid "Panflute Preferences"
+msgstr "Preferencias de Panflute"
+
+#: ../data/preferences.ui.h:11
+msgid "Show song change _notifications"
+msgstr "Mostrar _notificaciones al cambiar de canción"
+
+#: ../data/preferences.ui.h:12
+msgid "Title"
+msgstr "Título"
+
+#: ../data/preferences.ui.h:13
+msgid "Track Number"
+msgstr "Número de pista"
+
+#: ../data/preferences.ui.h:14
+msgid "Year"
+msgstr "Año"
+
+#: ../data/preferences.ui.h:15
+msgid "_Elapsed"
+msgstr "_Transcurrido"
+
+#: ../data/preferences.ui.h:16
+msgid "_Preferred player:"
+msgstr "Reproductor _preferido:"
+
+#: ../data/preferences.ui.h:17
+msgid "_Remaining"
+msgstr "_Restante"
+
+#: ../data/preferences.ui.h:18
+msgid "_Swap rows"
+msgstr "_Intercambiar filas"
+
+#: ../src/panflute/applet/applet.py:376 ../src/panflute/applet/applet.py:872
+msgid "<i>by</i> {0}"
+msgstr "<i>por</i> {0}"
+
+#: ../src/panflute/applet/applet.py:378 ../src/panflute/applet/applet.py:885
+msgid "<i>from</i> {0}"
+msgstr "<i>de</i> {0}"
+
+#: ../src/panflute/applet/applet.py:437
+msgid "(C) {0} Paul Kuliniewicz"
+msgstr ""
+
+#: ../src/panflute/applet/applet.py:438
+msgid "Control your favorite music player from a GNOME panel."
+msgstr "Controla tu reproductor de música favorito desde el panel de GNOME."
+
+#: ../src/panflute/applet/applet.py:441
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Adrián García https://launchpad.net/~adryitan\n"
+"  DiegoJ https://launchpad.net/~diegojromerolopez\n"
+"  Eduardo Rivas https://launchpad.net/~jerivasmelgar\n"
+"  Fernando Muñoz https://launchpad.net/~munozferna\n"
+"  Fred https://launchpad.net/~fred20"
+
+#: ../src/panflute/applet/applet.py:682
+msgid "Song info"
+msgstr "Información de la canción"
+
+#: ../src/panflute/applet/applet.py:683
+msgid "Rating"
+msgstr "Puntuación"
+
+#: ../src/panflute/applet/applet.py:684
+msgid "Time"
+msgstr "Tiempo"
+
+#: ../src/panflute/applet/applet.py:685
+msgid "Seek bar"
+msgstr "Barra de búsqueda"
+
+#: ../src/panflute/applet/applet.py:686
+msgid "Previous button"
+msgstr "Botón Anterior"
+
+#: ../src/panflute/applet/applet.py:687
+msgid "Play/pause button"
+msgstr "Botón Reproducir/Pausa"
+
+#: ../src/panflute/applet/applet.py:688
+msgid "Stop button"
+msgstr ""
+
+#: ../src/panflute/applet/applet.py:689
+msgid "Next button"
+msgstr "Botón Siguiente"
+
+#: ../src/panflute/applet/applet.py:690
+msgid "Volume"
+msgstr ""
+
+#: ../src/panflute/applet/applet.py:818 ../src/panflute/applet/applet.py:863
+#: ../src/panflute/applet/applet.py:1547
+msgid "Not playing"
+msgstr "No se está reproduciendo"
+
+#. To translators: elapsed time and duration of song (e.g. 1:23 of 4:56)
+#: ../src/panflute/applet/applet.py:899
+msgid "{elapsed} of {duration}"
+msgstr "{elapsed} de {duration}"
+
+#: ../src/panflute/applet/applet.py:977
+msgid "Launch {0}"
+msgstr "Lanzar {0}"
+
+#: ../src/panflute/applet/applet.py:985
+msgid "Launch music player"
+msgstr "Lanzar el reproductor de música"
+
+#: ../src/panflute/applet/applet.py:1052
+msgid "Pause playback"
+msgstr "Pausar la reproducción"
+
+#: ../src/panflute/applet/applet.py:1054 ../src/panflute/applet/applet.py:1077
+msgid "Stop playing"
+msgstr "Parar la reproducción"
+
+#: ../src/panflute/applet/applet.py:1057
+msgid "Start playing"
+msgstr "Iniciar la reproducción"
+
+#: ../src/panflute/applet/applet.py:1106
+msgid "Go to next song"
+msgstr "Ir a la canción siguiente"
+
+#: ../src/panflute/applet/applet.py:1149
+msgid "Go to previous song"
+msgstr "Ir a la canción anterior"
+
+#: ../src/panflute/applet/applet.py:1369 ../src/panflute/applet/applet.py:1390
+msgid "Rate this song"
+msgstr "Puntuar esta canción"
+
+#: ../src/panflute/applet/applet.py:1399
+msgid "Rating cannot be changed"
+msgstr ""
+
+#. Cache these translated strings to avoid making lots and lots of
+#. redundant calls to gettext.
+#. To translators: elapsed time, formatted as hours:minutes:seconds
+#: ../src/panflute/applet/applet.py:1698
+msgid "{hours:d}:{minutes:02d}:{seconds:02d}"
+msgstr "{hours:d}:{minutes:02d}:{seconds:02d}"
+
+#. To translators: elapsed time, formatted as minutes:seconds
+#: ../src/panflute/applet/applet.py:1701
+msgid "{minutes:d}:{seconds:02d}"
+msgstr "{minutes:d}:{seconds:02d}"
+
+#. To translators: remaining time, formatted as -hours:minutes:seconds
+#: ../src/panflute/applet/applet.py:1704
+msgid "-{hours:d}:{minutes:02d}:{seconds:02d}"
+msgstr "-{hours:d}:{minutes:02d}:{seconds:02d}"
+
+#. To translators: remaining time, formatted as -minutes:seconds
+#: ../src/panflute/applet/applet.py:1707
+msgid "-{minutes:d}:{seconds:02d}"
+msgstr "-{minutes:d}:{seconds:02d}"
