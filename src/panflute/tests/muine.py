@@ -59,9 +59,9 @@ class Runner (panflute.tests.runner.Runner):
         child = self.run_command ([path])
         self.set_child (child)
 
-        self.wait_for ("org.mate.Muine", True)
-        proxy = self.bus.get_object ("org.mate.Muine", "/org/mate/Muine/Player")
-        self.__muine = dbus.Interface (proxy, "org.mate.Muine.Player")
+        self.wait_for ("org.gnome.Muine", True)
+        proxy = self.bus.get_object ("org.gnome.Muine", "/org/mate/Muine/Player")
+        self.__muine = dbus.Interface (proxy, "org.gnome.Muine.Player")
 
         for path in self.TONE_PATHS:
             self.__muine.QueueFile (path)
@@ -76,4 +76,4 @@ class Runner (panflute.tests.runner.Runner):
                 raise e
 
         self.__muine = None
-        self.wait_for ("org.mate.Muine", False)
+        self.wait_for ("org.gnome.Muine", False)

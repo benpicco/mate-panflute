@@ -60,9 +60,9 @@ class Runner (panflute.tests.runner.Runner):
         child = self.run_command ([path])
         self.set_child (child)
 
-        self.wait_for ("org.mate.Rhythmbox", True)
-        proxy = self.bus.get_object ("org.mate.Rhythmbox", "/org/mate/Rhythmbox/Shell")
-        self.__shell = dbus.Interface (proxy, "org.mate.Rhythmbox.Shell")
+        self.wait_for ("org.gnome.Rhythmbox", True)
+        proxy = self.bus.get_object ("org.gnome.Rhythmbox", "/org/gnome/Rhythmbox/Shell")
+        self.__shell = dbus.Interface (proxy, "org.gnome.Rhythmbox.Shell")
 
         for uri in self.TONE_URIS:
             self.__shell.loadURI (uri, 0)
@@ -71,4 +71,4 @@ class Runner (panflute.tests.runner.Runner):
     def cleanup_single (self):
         self.__shell.quit ()
         self.__shell = None
-        self.wait_for ("org.mate.Rhythmbox", False)
+        self.wait_for ("org.gnome.Rhythmbox", False)

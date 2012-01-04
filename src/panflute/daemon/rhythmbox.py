@@ -40,7 +40,7 @@ class Connector (panflute.daemon.connector.DBusConnector):
 
     def __init__ (self):
         panflute.daemon.connector.DBusConnector.__init__ (self, "rhythmbox", "Rhythmbox",
-                                                          "org.mate.Rhythmbox")
+                                                          "org.gnome.Rhythmbox")
         self.props.icon_name = "rhythmbox"
 
 
@@ -66,8 +66,8 @@ class Root (panflute.daemon.mpris.Root):
         panflute.daemon.mpris.Root.__init__ (self, "Rhythmbox", **kwargs)
 
         bus = dbus.SessionBus ()
-        proxy = bus.get_object ("org.mate.Rhythmbox", "/org/mate/Rhythmbox/Shell")
-        self.__shell = dbus.Interface (proxy, "org.mate.Rhythmbox.Shell")
+        proxy = bus.get_object ("org.gnome.Rhythmbox", "/org/gnome/Rhythmbox/Shell")
+        self.__shell = dbus.Interface (proxy, "org.gnome.Rhythmbox.Shell")
 
 
     def do_Quit (self):
@@ -105,11 +105,11 @@ class Player (panflute.daemon.mpris.Player):
             self.register_feature (feature)
 
         bus = dbus.SessionBus ()
-        proxy = bus.get_object ("org.mate.Rhythmbox", "/org/mate/Rhythmbox/Player")
-        self.__player = dbus.Interface (proxy, "org.mate.Rhythmbox.Player")
+        proxy = bus.get_object ("org.gnome.Rhythmbox", "/org/gnome/Rhythmbox/Player")
+        self.__player = dbus.Interface (proxy, "org.gnome.Rhythmbox.Player")
 
-        proxy = bus.get_object ("org.mate.Rhythmbox", "/org/mate/Rhythmbox/Shell")
-        self.__shell = dbus.Interface (proxy, "org.mate.Rhythmbox.Shell")
+        proxy = bus.get_object ("org.gnome.Rhythmbox", "/org/gnome/Rhythmbox/Shell")
+        self.__shell = dbus.Interface (proxy, "org.gnome.Rhythmbox.Shell")
 
         self.__handlers = [
             self.__player.connect_to_signal ("playingChanged", self.__playing_changed_cb),

@@ -39,7 +39,7 @@ class Connector (panflute.daemon.connector.DBusConnector):
 
     def __init__ (self):
         panflute.daemon.connector.DBusConnector.__init__ (self, "muine", "Muine",
-                                                          "org.mate.Muine")
+                                                          "org.gnome.Muine")
         self.props.icon_name = "muine"
 
 
@@ -68,8 +68,8 @@ class Root (panflute.daemon.mpris.Root):
         panflute.daemon.mpris.Root.__init__ (self, "Muine", **kwargs)
 
         bus = dbus.SessionBus ()
-        proxy = bus.get_object ("org.mate.Muine", "/org/mate/Muine/Player")
-        self.__player = dbus.Interface (proxy, "org.mate.Muine.Player")
+        proxy = bus.get_object ("org.gnome.Muine", "/org/gnome/Muine/Player")
+        self.__player = dbus.Interface (proxy, "org.gnome.Muine.Player")
 
 
     def do_Quit (self):
@@ -102,8 +102,8 @@ class Player (panflute.daemon.mpris.Player):
         self.__art_file = None
 
         bus = dbus.SessionBus ()
-        proxy = bus.get_object ("org.mate.Muine", "/org/mate/Muine/Player")
-        self.__player = dbus.Interface (proxy, "org.mate.Muine.Player")
+        proxy = bus.get_object ("org.gnome.Muine", "/org/gnome/Muine/Player")
+        self.__player = dbus.Interface (proxy, "org.gnome.Muine.Player")
 
         self.cached_caps.all = self.NO_SONG_CAPS
 
