@@ -42,7 +42,7 @@ class Conf (object):
 
         if self.__root == None:
                self.log.warn ("applet.get_preferences_key did return None")
-               self.__root = "/apps/panflute"
+               self.__root = "/apps/panflute-applet"
 
         self.__client = mateconf.client_get_default ()
         self.log.info ("MateConf root is {0}".format (self.__root))
