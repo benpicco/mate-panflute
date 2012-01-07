@@ -80,21 +80,6 @@ def setup_output ():
                          format = LOG_FORMAT)
 
 
-
-if len(sys.argv) == 2:
-        if sys.argv[1] == "-d":
-		import gtk
-                mainWindow = gtk.Window(gtk.WINDOW_TOPLEVEL)
-                mainWindow.set_title("panflute")
-                mainWindow.connect("destroy", gtk.main_quit)
-                applet = mateapplet.Applet()
-                applet_factory(applet, None)
-                applet.reparent(mainWindow)
-                mainWindow.show_all()
-                gtk.main()
-                sys.exit()
-
-
 if __name__ == "__main__":
     setup_output ()
     logger = logging.getLogger ("panflute")
