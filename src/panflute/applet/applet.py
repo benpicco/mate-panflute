@@ -356,7 +356,7 @@ class Applet (object):
 
         try:
             import pynotify
-            notification = pynotify.Notification (" ", "", None, None)
+            notification = pynotify.Notification (" ", "", None)
             notification.set_urgency (pynotify.URGENCY_LOW)
             return notification
         except ImportError, e:
